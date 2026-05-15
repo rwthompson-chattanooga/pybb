@@ -2,6 +2,7 @@ from pybaseball import schedule_and_record
 from pybaseball import standings
 
 import pandas as pd
+import numpy as np  
 
 teamlist = [
     'ARI', 'ATL', 'BAL', 'BOS', 'CHC', 'CIN', 'CLE', 'COL', 'DET', 'HOU',
@@ -15,10 +16,8 @@ teamlist = [
 """ for team in teamlist:
     print(team) """
         
-atlsched = schedule_and_record(2026, 'ATL')
-standings2026 = standings(2026)
+atlsched = schedule_and_record({2026}, {'ATL'})
 
-print(standings2026)
-
+print(atlsched.head(5))
 #print(atlsched.iloc[:, 0:4])
 #print(type(atlsched.iloc[1,0]))
